@@ -14,6 +14,5 @@ export abstract class BaseDatabase{
             }
         }
     }
-
     )
 }

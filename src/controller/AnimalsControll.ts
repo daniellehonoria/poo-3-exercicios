@@ -6,6 +6,7 @@ export class AnimalsController{
 
     public getAnimals = async(req:Request, res: Response)=>{
         try {
+            
             const animalsDatabase = new AnimalsDatabase()
             const animalsDB: IAnimalsDB[] = await animalsDatabase.findAnimals()
 

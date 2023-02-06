@@ -5,5 +5,6 @@ export interface IAnimalsDB{
     name: string,
     age: number,
     color: string
+    
 }
 

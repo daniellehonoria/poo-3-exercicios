@@ -1,6 +1,7 @@
 import { BaseDatabase } from "./BaseDatabase";
 import { IAnimalsDB } from "../types";
 export class AnimalsDatabase extends BaseDatabase{
+    
     public static TABLE_ANIMALS = "animals"
         
     public async findAnimals(){
@@ -14,6 +15,5 @@ export class AnimalsDatabase extends BaseDatabase{
         await BaseDatabase
         .connection(AnimalsDatabase.TABLE_ANIMALS)
         .insert(newAnimal)
-    }
-    
+    }    
     }
