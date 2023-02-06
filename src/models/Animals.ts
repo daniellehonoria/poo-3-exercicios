@@ -7,7 +7,6 @@ export class Animals{
         private age: number,
         private color: string
     ){}
-
     public getId():string{
         return this.id
     }

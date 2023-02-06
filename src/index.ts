@@ -12,6 +12,5 @@ app.listen(3003, () => {
 app.get("/ping", (req: Request, res: Response) => {
     res.send("Pong!")
 })
-
 const animalsController = new AnimalsController()
 app.get("/animals", animalsController.getAnimals)
