@@ -10,10 +10,30 @@ export class AnimalsDatabase extends BaseDatabase{
      .connection(AnimalsDatabase.TABLE_ANIMALS)
      return animalsDB
         }
+public async findAnimalsById(id:String){
+    const [animalsDB]: IAnimalsDB[] | undefined[] = await BaseDatabase
+    .connection(AnimalsDatabase.TABLE_ANIMALS)
+    .where({id})
+    return animalsDB
 
-    public async insertAnimals(newAnimal:IAnimalsDB){
+}
+    public async insertAnimals(newAnimalDB:IAnimalsDB){
         await BaseDatabase
         .connection(AnimalsDatabase.TABLE_ANIMALS)
-        .insert(newAnimal)
-    }    
+        .insert(newAnimalDB)
+    }   
+    
+    public async updateAnimalsById(id: string, newAnimal: any){
+        await BaseDatabase
+        .connection(AnimalsDatabase.TABLE_ANIMALS)
+        .update({
+        id: newAnimal.Id,//update recebe todas as colunas q serão editadas
+        classification: newAnimal.classification,
+        species: newAnimal.species,
+        name: newAnimal.name,
+        age: newAnimal.age,
+        color: newAnimal.color
+        })
+        .where({id})
+    }
     }
